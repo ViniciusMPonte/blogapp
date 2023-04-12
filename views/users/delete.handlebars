@@ -1,0 +1,32 @@
+<h3>Deletar conta</h3>
+
+<div class="card">
+    <div class="card-body">
+
+        <form action="/user/delete" method="post" class="needs-validation" novalidate>
+
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" name="email" class="form-control" required>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div>
+                <label for="password">Senha: </label>
+                <input type="password" name="password" class="form-control" required>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="my-3">
+                <label for="repeatedPassword">Repita sua senha: </label>
+                <input type="password" name="repeatedPassword" class="form-control" required>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <button type="submit" class="btn btn-danger mt-4">Deletar</button>
+
+        </form>
+    </div>
+</div>
+
+<script src="/js/validate-form.js"></script>

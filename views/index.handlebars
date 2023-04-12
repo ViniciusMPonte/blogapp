@@ -1,0 +1,39 @@
+<div class="p-5 mb-4 bg-body-secondary rounded-3">
+    <h1 class="display-4">Bem-vindo ao Blog Pontevi!</h1>
+    <p class="lead">Este é um BLOG simples, desenvolvido em Node.js, Express e MongoDB.</p>
+    <hr class="my-4">
+    <p>Aqui você vai encontrar novidades do mundo da programação.</p>
+
+    {{#if user}}
+    {{else}}
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/user/register" role="button">Crie uma conta</a>
+        </p>
+    {{/if}}
+</div>
+
+<br>
+
+<h3>Postagens recentes:</h3>
+
+{{#each posts}}
+
+<div class="card my-4">
+    <div class="card-body">
+
+        <h4>{{title}}</h4>
+        <p>{{description}}</p>
+        <a href="/posts/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+        <hr>
+        <small><strong>Categoria:</strong> {{category.name}}</small>
+        <br>
+        <small><strong>Data de publicação:</strong> {{category.date}}</small>
+
+    </div>
+</div>
+
+{{else}}
+
+<h4 class="my-4">Nenhuma postagem registrada</h4>
+
+{{/each}}

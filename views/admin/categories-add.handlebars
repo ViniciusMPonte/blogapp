@@ -1,0 +1,33 @@
+{{#each errors}}
+
+<div class="alert alert-danger">{{text}}</div>
+
+{{/each}}
+
+<h3>Nova Categoria</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/categories/new" method="post" class="needs-validation" novalidate>
+
+            <div>
+                <label for="name">Nome: </label>
+                <input type="text" id="name" name="name" placeholder="Nome da categoria" class="form-control"
+                    value="{{category.name}}" required>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div>
+                <label for="slug">Slug: </label>
+                <input type="text" id="slug" name="slug" placeholder="Slug da categoria" class="form-control"
+                    value="{{category.slug}}" required>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <br>
+            
+            <button type="submit" class="btn btn-success">Criar categoria</button>
+        </form>
+    </div>
+</div>
+
+<script src="/js/validate-form.js"></script>

@@ -1,0 +1,62 @@
+{{#each errors}}
+
+<div class="alert alert-danger">{{text}}</div>
+
+{{else}}
+
+{{/each}}
+
+<h3>Nova Postagem</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/posts/new" method="post" class="needs-validation" novalidate>
+
+            <div>
+                <label for="title">Título: </label>
+                <input type="text" id="title" name="title" class="form-control" value="{{post.title}}" required>
+                <div class="invalid-feedback"></div>
+            </div>
+            <br>
+            <div>
+                <label for="slug">Slug: </label>
+                <input type="text" id="slug" name="slug" class="form-control" value="{{post.slug}}" required>
+                <div class="invalid-feedback"></div>
+            </div>
+            <br>
+            <div>
+                <label for="description">Descrição: </label>
+                <input type="text" id="description" name="description" class="form-control char-count" maxlength="150"
+                    value="{{post.description}}" required>
+
+                <div class="invalid-feedback"></div>
+                <small class="invalid-feedback"></small>
+                <small class="valid-feedback"></small>
+            </div>
+            <br>
+            <div>
+                <label for="content">Conteúdo: </label>
+                <textarea type="text" id="content" name="content" class="form-control char-count" minlength="300"
+                    maxlength="1000" rows="3" required>{{post.content}}</textarea>
+
+                <div class="invalid-feedback"></div>
+                <small class="invalid-feedback"></small>
+                <small class="valid-feedback"></small>
+            </div>
+            <br>
+            <label for="category">Categoria: </label>
+            <select class="form-control" id="category" name="category">
+                {{#each categories}}
+                <option value="{{_id}}">{{name}}</option>
+                {{else}}
+                <option value="0">Nenhuma categoria registrada</option>
+                {{/each}}
+            </select>
+            <br>
+            <button type="submit" class="btn btn-success">Criar postagem</button>
+
+        </form>
+    </div>
+</div>
+
+<script src="/js/validate-form.js"></script>
+<script src="/js/auto-resize-textarea.js"></script>
