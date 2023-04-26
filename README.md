@@ -4,6 +4,10 @@ Este é um projeto de blog simples que foi construído usando várias tecnologia
 
 O projeto pode ser acessado através do link https://blogapp-viniciusmponte.cyclic.app/
 
+## Screenshot
+
+<img src="https://raw.githubusercontent.com/ViniciusMPonte/portfolio/main/images/blog-pontevi.png" style="width: 500px; height: auto;">
+
 ## Autenticação e Autorização
 
 O blog possui um sistema de autenticação e autorização que permite que apenas usuários administradores autenticados (logados) possam criar, editar e excluir categorias e postagens. A autenticação é feita com a biblioteca `passport-local`.
